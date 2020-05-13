@@ -4,16 +4,30 @@
 // Сотрудники и кол-во выполненых задач содержатся как свойства объекта
 // в формате "имя":"кол-во задач".
 
-const findBestEmployee = function (employees) {
-  const keys = Object.keys(employees);
-  //   console.log(keys);
-  const values = Object.values(employees);
-  //   console.log(values);
+// const findBestEmployee = function (employees) {
+//   const keys = Object.keys(employees);
+//   const values = Object.values(employees);
+//   const namber = Math.max(...values);
 
-  const namber = Math.max(...values);
-  //   console.log(namber);
+//   return keys[values.indexOf(namber)];
+// };
+// решение рабочее, но не эффективное, т.к.
+// по сути используется 4 цикла
 
-  return keys[values.indexOf(namber)];
+// за 2 цикла:
+const findBestEmployee = employees => {
+  const array = Object.entries(employees);
+  let max = 0;
+  let employer = '';
+  for (let index = 0; index < array.length; index++) {
+    const key = array[index][0];
+    const value = array[index][1];
+    if (value > max) {
+      max = value;
+      employer = key;
+    }
+  }
+  return employer;
 };
 
 /*

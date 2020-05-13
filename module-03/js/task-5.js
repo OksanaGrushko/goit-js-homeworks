@@ -27,6 +27,20 @@ const getAllPropValues = function (arr, prop) {
   return i;
 };
 
+// намного проще через оператор in
+
+// const getAllPropValues = (users, prop) => {
+// let values = [];
+
+// for (let user of users) {
+// if (prop in user) {
+// values.push(user[prop]);
+// }
+// }
+
+// return values;
+// };
+
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */

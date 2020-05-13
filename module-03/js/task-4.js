@@ -14,6 +14,7 @@ const countTotalSalary = function (employees) {
   }
   return salaryAmount;
 };
+// через Object.values чуть проще
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
