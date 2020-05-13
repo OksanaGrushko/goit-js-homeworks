@@ -25,8 +25,9 @@ let quantity = prompt('Какое количество дроидов вы хо�
 if (quantity === null) {
   console.log('Отменено пользователем!');
 } else {
-  totalPrice = pricePerDroid * quantity;
   totalPrice = Number(totalPrice);
+  totalPrice = pricePerDroid * quantity;
+
   if (credits > totalPrice) {
     credits = credits - totalPrice;
     console.log(
