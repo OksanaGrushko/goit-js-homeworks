@@ -17,6 +17,7 @@
 
 let input;
 const numbers = [];
+let nonzero = 0;
 let total = 0;
 
 do {
@@ -25,8 +26,8 @@ do {
     alert('Было введено не число, попробуйте еще раз');
     continue;
   } else {
-    input = Number(input);
-    numbers.push(input);
+    nonzero = Number(input);
+    numbers.push(nonzero);
     console.log(numbers);
   }
 } while (input);
@@ -36,3 +37,6 @@ for (let number of numbers) {
 }
 
 alert(`Общая сумма чисел равна ${total}`);
+
+//если не ввести let nonzero = 0; то при введении 0 цыкл будет автоматически прикращаться...
+// а нужно что бы он прикращался с кнопки ОТМЕНА
