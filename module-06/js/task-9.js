@@ -86,6 +86,13 @@ const users = [
 ];
 // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 
+// const getNamesSortedByFriendsCount = users => {
+//   const userName = users.sort((a, b) => {
+//     return a.friends.length - b.friends.length;
+//   });
+//   return userName.map(user => user.name);
+// };
+
 const getNamesSortedByFriendsCount = users => {
   return users
     .sort((a, b) => a.friends.length - b.friends.length)

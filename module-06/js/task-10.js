@@ -84,13 +84,16 @@ const users = [
     age: 39,
   },
 ];
-// Получить общую сумму баланса (поле balance) всех пользователей.
+// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+const getSortedUniqueSkills = users => {
+  return users
+    .reduce((ability, user) => {
+      ability.push(...user.skills);
+      return ability;
+    }, [])
+    .filter((elem, index, array) => array.indexOf(elem) === index)
+    .sort((a, b) => a.localeCompare(b, 'en'));
+};
 
-// const calculateTotalBalance = users =>
-//   users.reduce((total, user) => {
-//     return total + user.balance;
-//   }, 0);
-const calculateTotalBalance = users =>
-  users.reduce((acc, { balance }) => acc + balance, 0);
-
-console.log(calculateTotalBalance(users)); // 20916
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
