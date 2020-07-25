@@ -44,7 +44,6 @@ function savedSwitchTheme() {
     refs.themeButtonRef.checked = true;
   }
 }
-
 //добавляем тему по условию
 function addClassThemeBody() {
   if (localStorage.theme === theme.DARK) {
